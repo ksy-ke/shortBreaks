@@ -1,0 +1,22 @@
+.control_element {
+    float: left;
+    margin: 0 auto;
+}
+
+div#control {
+    font-family: Cutive Mono, Nanum Gothic Coding, Cousine, monospace;
+    padding: 2px 4px;
+}
+
+table {
+    display: block;
+    border-collapse: collapse;
+
+}
+
+
+td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px;
+}

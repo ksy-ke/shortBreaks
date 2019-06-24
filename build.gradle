@@ -1,0 +1,56 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.6.RELEASE")
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'org.springframework.boot'
+
+group 'short-break'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+dependencies {
+    // Spring
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat'
+    implementation group: 'org.springframework.security', name: 'spring-security-taglibs'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-test'
+    implementation group: 'org.springframework.security', name: 'spring-security-test'
+
+    // DB
+    runtime group: 'com.h2database', name: 'h2'
+
+    // WEB
+    implementation group: 'javax.servlet', name: 'jstl', version: '1.2'
+    implementation group: 'taglibs', name: 'standard', version: '1.1.2'
+    implementation group: 'org.apache.taglibs', name: 'taglibs-standard-impl', version: '1.2.5'
+    implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '9.0.16'
+    implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-el', version: '9.0.16'
+    implementation group: 'org.webjars', name: 'bootstrap', version: '4.3.0'
+    implementation group: 'org.webjars', name: 'jquery', version: '3.3.1-1'
+//    implementation group: 'org.webjars', name: 'datatables', version: '1.10.19'
+
+    // Utils
+    implementation group: 'log4j', name: 'log4j', version: '1.2.17'
+    implementation group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+
+    // Test
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'org.hamcrest', name: 'hamcrest-all', version: '1.3'
+    testCompile group: 'org.mockito', name: 'mockito-core', version: '2.28.2'
+}
